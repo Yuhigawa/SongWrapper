@@ -1,0 +1,1 @@
+const spotify = require('./spotify/index')();
