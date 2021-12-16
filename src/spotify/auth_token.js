@@ -5,6 +5,7 @@ const { stringify } = require('querystring');
 var client_id = 'c17e9b2068874c459fe9e2b12982b985';
 var client_secret = '9ba489dfea444d2c9bfcd1073fdfbd68';
 
+// TODO: make the auth right
 var authOptions = {
   method: 'post',
   url: 'https://accounts.spotify.com/api/token',
