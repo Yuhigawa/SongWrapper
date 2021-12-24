@@ -1,0 +1,5 @@
+node_modules/
+node_modules/*
+package-lock.json
+src/spotify/possibly_deprecated/assets/secrets.json
+src/spotify/possibly_deprecated/assets/spotify_playlist_data.json

@@ -1,11 +1,29 @@
 {
     "name": "songwrapper",
+    "author": "yuhigawa",
     "version": "1.0",
-    "main": "src/main.js",
+    "main": "main.js",
     "scripts": {
-        "start": "node src/main.js"
+        "start": "node main.js",
+        "watch": "nodemon main.js",
+        "test": "jest"
     },
+    "jest": {
+        "testEnvironment": "node",
+        "coveragePathIgnorePatterns": [
+          "/node_modules/"
+        ],
+        "verbose": true
+      },
     "dependencies": {
-        "axios": "*"
+        "axios": "*",
+        "express": "^4.17.2",
+        "request": "^2.88.2",
+        "spotify-web-api-node": "^5.0.2"
+    },
+    "devDependencies": {
+        "jest": "^27.4.5",
+        "nodemon": "*",
+        "supertest": "^6.1.6"
     }
 }
