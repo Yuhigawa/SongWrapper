@@ -5,9 +5,9 @@ const routes = express.Router();
 const axios = require('axios');
 
 const spotifyApi = new SpotifyWebApi({
-    redirectUri: 'http://localhost:8000/spotify/callback',
-    clientId: 'c17e9b2068874c459fe9e2b12982b985',
-    clientSecret: '9ba489dfea444d2c9bfcd1073fdfbd68'
+    redirectUri: process.env.spotifyRedirectUri,
+    clientId: process.env.spotifyclientId,
+    clientSecret: process.env.spotifyclientSecret
 });
 
 const scopes = [
