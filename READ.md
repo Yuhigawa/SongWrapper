@@ -2,7 +2,7 @@
 
 This app will provide the ability to create an universal playlist with any plataform(spotify/youtube/deezer/AmazonMusic, etc), been able to modifity it in group of friends and play it in any plataform that you want.
 
-## UNDER DEVELOPMENT
+## UNDER DEVELOPMENT :construction:
 > GOALS FOR NOW :file_folder:
 ### Spotify Wrapper :pushpin:
 * ADD track :+1:
@@ -27,7 +27,7 @@ This app will provide the ability to create an universal playlist with any plata
 
 > ###### You can go to the repository [PROJECT] and see the schedule of production.
 
-### Try It Out
+### Try It Out :wrench:
 ```sh
 ~> git clone git@github.com:Yuhigawa/SongWrapper.git
 ~> cd ./SongWrapper
