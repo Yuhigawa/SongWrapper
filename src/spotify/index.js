@@ -3,11 +3,12 @@ const express = require('express');
 const routes = express.Router();
 
 const axios = require('axios');
+const env = require('../../env.json');
 
 const spotifyApi = new SpotifyWebApi({
-    redirectUri: process.env.spotifyRedirectUri,
-    clientId: process.env.spotifyclientId,
-    clientSecret: process.env.spotifyclientSecret
+    redirectUri: env.spotifyRedirectUri,
+    clientId: env.spotifyClientId,
+    clientSecret: env.spotifyClientSecret
 });
 
 const scopes = [
