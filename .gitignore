@@ -6,3 +6,4 @@ src/spotify/possibly_deprecated/*
 env.json
 
 package-lock.json
+.env
