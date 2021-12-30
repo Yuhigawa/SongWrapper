@@ -1,17 +1,7 @@
 const axios = require('axios');
 
 const base_url = 'https://connect.deezer.com/oauth';
-
-class DeezerUsersApi {
-    constructor() {
-        this.base_url = 'https://api.deezer.com';
-    }
-
-    async user_data(access_token) {
-        return await axios.get(`https://api.deezer.com/user/me?access_token=${access_token}`);
-    }
-
-};
+const base_url_user = 'https://api.deezer.com';
 
 class DeezerWebApi {
     constructor(app_id, app_secret, app_redirect) {
@@ -35,7 +25,7 @@ class DeezerWebApi {
         return null;
     }
 
-    async setAccessToken(access_token) {
+    setAccessToken(access_token) {
         this.access_token = access_token;
     }
 
@@ -44,11 +34,20 @@ class DeezerWebApi {
     }
 
     async createPlaylist(title, user_id) {
-        return await axios.post(`https://api.deezer.com/user/${user_id}/playlists?title=${title}&access_token=${this.access_token}`);
+        return await axios.post(`${base_url_user}/user/${user_id}/playlists?title=${title}&access_token=${this.access_token}`);
+    }
+
+    // playlist/{playlist_id}/tracks
+    async addTracksToPlaylist(playlist_id, track_list) {
+        return await axios.post(`${base_url_user}/playlist/${playlist_id}/tracks?songs=${track_list}&access_token=${this.access_token}`);
+    }
+
+    async searchTracks(search_query) {
+        return await axios.get(`${base_url_user}/search?q=${search_query}`);
     }
 
     async userData(access_token) {
-        return await axios.get(`https://api.deezer.com/user/me?access_token=${access_token}`);
+        return await axios.get(`${base_url_user}/user/me?access_token=${access_token}`);
     }
 
     setUserData(data) {
