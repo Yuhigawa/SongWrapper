@@ -4,22 +4,25 @@ const querystring = require('querystring');
 const express = require('express');
 const routes = express.Router();
 
-const env = require('../../env.json');
-
-const _app_id = env.deezerClientId;
-const _app_secret = env.deezerClientSecret;
-const _app_redirect = env.deezerRedirectUri;
-const app_perms = 'basic_access, email, offline_access, manage_library';
-
 const DeezerWebAPi = require('./api/DeezerWebApi');
 const { throws } = require('assert');
 
-const deezerApi = new DeezerWebAPi(
-    app_id = _app_id,
-    app_secret = _app_secret,
-    app_redirect = _app_redirect
-);
+const app_perms = 'basic_access, email, offline_access, manage_library';
 
+// const env = require('../../env.json');
+// const deezerApi = new DeezerWebAPi(
+//     app_id = env.deezerClientId,
+//     app_secret = env.deezerClientSecret,
+//     app_redirect = env.deezerRedirectUri
+// );
+
+require('dotenv').config();
+const deezerApi = new DeezerWebAPi(
+    app_id = process.env.deezerClientId,
+    app_secret = process.env.deezerClientSecret,
+    app_redirect = process.env.deezerRedirectUri
+);
+    
 routes.get('/login', async (req, res) => {
     // res.redirect(`https://connect.deezer.com/oauth/auth.php?app_id=${app_id}&redirect_uri=${app_redirect}&perms=${app_perms}`);
     res.redirect(deezerApi.createAuthorizeURL(app_perms));

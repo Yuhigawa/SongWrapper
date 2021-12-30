@@ -3,12 +3,18 @@ const express = require('express');
 const routes = express.Router();
 
 const axios = require('axios');
-const env = require('../../env.json');
+// const env = require('../../env.json');
+// const spotifyApi = new SpotifyWebApi({
+//     redirectUri: env.spotifyRedirectUri,
+//     clientId: env.spotifyClientId,
+//     clientSecret: env.spotifyClientSecret
+// });
 
+require('dotenv').config();
 const spotifyApi = new SpotifyWebApi({
-    redirectUri: env.spotifyRedirectUri,
-    clientId: env.spotifyClientId,
-    clientSecret: env.spotifyClientSecret
+    redirectUri: process.env.spotifyRedirectUri,
+    clientId: process.env.spotifyClientId,
+    clientSecret: process.env.spotifyClientSecret
 });
 
 const scopes = [
