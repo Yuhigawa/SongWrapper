@@ -12,10 +12,10 @@ This app will provide the ability to create an universal playlist with any plata
 * CHANGE playlist name/icon/
 
 ### Deezer Wrapper :pushpin:
-* ADD track
+* ADD track :+1:
 * DELETE track
 * CREATE playlist :+1:
-* SEARCH song/artits/album
+* SEARCH song/artits/album :+1:
 * CHANGE playlist name/icon/
 
 ### Youtube Wrapper :pushpin:
